@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>For You Anushka ❤️</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<section class="section reveal">
+
+    <h1>My Promise ❤️</h1>
+
+    <p>
+        I'll keep trying to become better,
+        because you deserve love,
+        respect and happiness.
+    </p>
+
+</section>
+
+
+<section class="section reveal">
+
+    <h2>Can You Forgive Me?</h2>
+
+    <p>Whenever you're ready, Anushka.</p>
+
+    <button class="button" onclick="sayYes()">
+        Yes 💖
+    </button>
+
+    <button class="button" onclick="needTime()">
+        Give me time
+    </button>
+
+    <h3 id="response"></h3>
+
+</section>
+
+
+<script>
+
+function sayYes() {
+
+    document.getElementById("response").innerHTML =
+    "Thank you Anushka! ❤️ I'll keep showing you how much you mean to me.";
+
+    heartBurst();
+
+}
+
+function needTime() {
+
+    document.getElementById("response").innerHTML =
+    "Take all the time you need. I'll be here. 🤍";
+
+}
+
+function heartBurst() {
+
+    for(let i = 0; i < 30; i++) {
+
+        let heart = document.createElement("span");
+
+        heart.innerHTML = "💗";
+
+        heart.style.position = "fixed";
+        heart.style.left = "50%";
+        heart.style.top = "50%";
+        heart.style.fontSize = "22px";
+        heart.style.pointerEvents = "none";
+
+        document.body.appendChild(heart);
+
+        let x = (Math.random() - 0.5) * 500;
+        let y = (Math.random() - 0.5) * 500;
+
+        heart.animate([
+            { transform: "translate(0,0)", opacity: 1 },
+            { transform: `translate(${x}px,${y}px)`, opacity: 0 }
+        ], {
+            duration: 1500
+        });
+
+        setTimeout(() => heart.remove(), 1600);
+
+    }
+
+}
+
+</script>
+
+<script src="java.js"></script>
+
+</body>
+</html>
